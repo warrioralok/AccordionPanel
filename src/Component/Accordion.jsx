@@ -6,14 +6,12 @@ import FAQ from "./FAQ";
 const Accordian = () => {
   const [data, setData] = useState([]);
   const [activeId, setActiveId ] = useState(false)
-
   useEffect(() => {
     setData(faq);
   }, []);
 
   const togglePanel = (id) =>{
-    setActiveId((previd) => (previd === id) ? false : id );
-    console.log('Hello');
+    setActiveId((prevId) => (prevId === id ? false : id))
   }
 
   return (
