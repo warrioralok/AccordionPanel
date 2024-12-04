@@ -5,19 +5,17 @@ import { useEffect } from "react";
 import FAQ from "./FAQ";
 const Accordian = () => {
   const [data, setData] = useState([]);
-  const [activeId, setActiveId ] = useState(false)
+  const [activeId, setActiveId ] = useState(0)
   useEffect(() => {
     setData(faq);
   }, []);
 
   const togglePanel = (id) =>{
-    setActiveId((prevId) => (prevId === id ? false : id))
+    setActiveId((prev) => (prev === id) ? false : id)
   }
 
   return (
     <>
-      <h2>This is Accordian</h2>
-
       <ul className="section-accordion">
         {data.map((currElem) => {
           return (
